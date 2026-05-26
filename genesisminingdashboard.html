@@ -718,10 +718,109 @@ body{
             <div style="font-size:20px;color:var(--gold);font-weight:700;display:block" id="welcome-msg"><i class="fa-solid fa-star"></i> Welcome Mrs. Jeanette</div>
           </div>
         </div>
+
+          <div id="timercontainer" class="grid grid-cols-3 gap-4 text-center mb-6">
+
+      <div id="time" class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/30">
+
+        <span id="hours" class="text-4xl font-bold tracking-tight text-emerald-400">00</span>
+
+        <div id="hourText" class="text-xs text-slate-400 uppercase mt-1">Hours</div>
+
+      </div>
+
+      <div id="Timecolumn">
+        :
+      </div>
+
+
+      <div id="time" class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/30">
+        <span id="minutes" class="text-4xl font-bold tracking-tight text-emerald-400">00</span>
+        <div id="hourText" class="text-xs text-slate-400 uppercase mt-1">Mins</div>
+      </div>
+
+       <div id="Timecolumn">
+        :
+      </div>
+      
+      <div id="time" class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/30">
+
+        <span id="seconds" class="text-4xl font-bold tracking-tight text-emerald-400">00</span>
+        <div id="hourText" class="text-xs text-slate-400 uppercase mt-1">Secs</div>
+      </div>
+
+    </div>
+
+    <button style="visibility:hidden ;" id="resetBtn" class="px-4 py-2 bg-slate-700 hover:bg-rose-600 transition-colors duration-200 rounded-lg text-sm font-medium text-slate-200 hover:text-white">
+      Reset Timer
+    </button>
+
+
+    
+    <style>
+        #timercontainer{
+
+            display: flex;
+            justify-content: center;
+            box-shadow: 3px 3px 3px 3px black;
+            border-radius: 50px;
+            text-align: center;
+           
+        }
+
+        #time{
+
+             margin: 20px;
+             padding: ;
+
+        }
+
+        #minutes{
+
+          padding: 10px;
+          color:rgb(250, 5, 5);
+          background-color: #050000d8;
+          font-weight: bolder;
+        }
+        #seconds{
+
+          padding: 10px;
+          color:rgb(250, 5, 5);
+             background-color: #050000d8;
+             font-weight: bolder;
+        }
+        #hours{
+
+          padding: 8px;
+           color:rgb(250, 5, 5);
+             background-color: #050000d8;
+             font-weight: bolder;
+        }
+
+        #hourText{
+
+          color: red;
+          margin-top: 10px;
+          font-weight: bolder;
+
+        }
+
+        #Timecolumn{
+
+          margin-top: 5px;
+          font-size: 30px;
+        }
+    </style>
+    
+
+
+
         <div class="topbar-right">
-          <div class="badge badge-green"><div class="pulse-dot"></div> Mining Active</div>
-          <div class="icon-btn"><i class="fa-solid fa-bell"></i><div class="notif-dot"></div></div>
+          <div class="badge badge-green" style="color:red;" ><div class="pulse-dot" style="color:red;"></div> Mining Paused</div>
+
+          <div class="icon-btn" style="color:red;"><i class="fa-solid fa-bell"></i><div class="notif-dot"></div></div>
         </div>
+
       </div>
 
       <div class="content">
@@ -731,7 +830,7 @@ body{
           <div class="ov-grid">
             <div class="ov-card gold-card">
               <div class="ov-top">
-                <div><div class="ov-lbl">Total Balance</div><div class="ov-val gold">$387,334.00</div><div class="ov-hint">Available to withdraw</div></div>
+                <div><div class="ov-lbl">Total Balance</div><div class="ov-val gold" style="color:red;">$387,334.00</div><div class="ov-hint">Available to withdraw</div></div>
                 <div class="ov-icon"><i class="fa-solid fa-wallet"></i></div>
               </div>
             </div>
@@ -743,7 +842,7 @@ body{
             </div>
             <div class="ov-card">
               <div class="ov-top">
-                <div><div class="ov-lbl">Mining Status</div><div class="ov-val" style="font-size:15px;padding-top:6px;display:flex;align-items:center;gap:7px"><div class="pulse-dot" style="background:var(--green)"></div> Running</div><div class="ov-hint"><a href="#" onclick="showView('assets',document.querySelector('[onclick*=assets]'))">View Status →</a></div></div>
+                <div><div class="ov-lbl">Mining Status</div><div class="ov-val" style="font-size:15px;padding-top:6px;display:flex;align-items:center;gap:7px"><div class="pulse-dot" style="background:var(--red)"></div> Running</div><div class="ov-hint"><a href="#" onclick="showView('assets',document.querySelector('[onclick*=assets]'))">View Status →</a></div></div>
                 <div class="ov-icon" style="background:rgba(46,213,115,0.1);color:var(--green)"><i class="fa-solid fa-microchip"></i></div>
               </div>
             </div>
@@ -817,13 +916,22 @@ body{
         <div class="act-amt">...</div>
     </div>
 <br>
-    <div class="act-item" style="background-color: red;">
+    <div class="act-item" style="background-color: rgb(112, 107, 107);">
         <div class="act-ic b"><i class="fa-solid fa-bell"></i></div>
         <div style="min-width:0;flex:1">
             <div class="act-title" style="color: white;">Widthdrawal Alert</div>
             <div class="act-sub" style="color: white;">Error in withdrawal (Enable Send Feature is disabled) </div>
         </div>
         <div class="act-amt" style="color: white;">Thursday 30-04-2026</div>
+    </div>
+<br>
+    <div class="act-item" style="background-color: red;">
+        <div class="act-ic b"><i class="fa-solid fa-bell"></i></div>
+        <div style="min-width:0;flex:1">
+            <div class="act-title" style="color: white;">Account Termination Alert</div>
+            <div class="act-sub" style="color: white;">Account termination will occur in 78 hours (May 29 at 8:00 PM PST / GMT-8). </div>
+        </div>
+        <div class="act-amt" style="color: white;">Tuesday 26-05-2026</div>
     </div>
 </div>
    
@@ -851,10 +959,10 @@ body{
           <div class="wallet-grid">
             <div class="wallet-bal">
               <div class="lbl">TOTAL BALANCE</div>
-              <div class="amt" style="color">$387,334.00</div>
+              <div class="amt" style="color:red;">$387,334.00</div>
               <div class="sub">4.9723000 BTC equivalent</div>
               <div class="actions">
-                <button class="btn btn-gold btn-sm" onclick="doWithdraw()"><i class="fa-solid fa-arrow-up-from-bracket"></i> Withdraw</button>
+                <button class="btn btn-gold btn-sm" onclick="doWithdraw()" style="background-color:red;" ><i class="fa-solid fa-arrow-up-from-bracket"></i> Withdraw</button>
                 <button class="btn btn-ghost btn-sm" onclick="showToast('Deposit address ready!','fa-wallet')"><i class="fa-solid fa-arrow-down-to-bracket"></i> Deposit</button>
               </div>
             </div>
@@ -1455,6 +1563,76 @@ document.addEventListener('keydown',e=>{
   if(tr) tr.innerHTML=placeholder+placeholder;
   fetchPrices();
 })();
+
+
+
+
+// Configuration: Countdown duration changed to 78 hours
+const COUNTDOWN_HOURS = 78;
+
+// DOM Elements
+const hoursEl = document.getElementById('hours');
+const minutesEl = document.getElementById('minutes');
+const secondsEl = document.getElementById('seconds');
+const resetBtn = document.getElementById('resetBtn');
+
+let countdownInterval;
+
+function initTimer() {
+  // 1. Check if a target end time already exists in localStorage
+  let targetTime = localStorage.getItem('countdown_target');
+
+  if (!targetTime) {
+    // 2. If not, set it to (Current Time + 78 Hours) in milliseconds
+    const durationInMs = COUNTDOWN_HOURS * 60 * 60 * 1000;
+    targetTime = new Date().getTime() + durationInMs;
+    localStorage.setItem('countdown_target', targetTime);
+  }
+
+  // Convert string back to a number
+  targetTime = parseInt(targetTime, 10);
+
+  // 3. Start updating the display every second
+  updateTimer(targetTime); // Run immediately to avoid 1-second delay
+  
+  clearInterval(countdownInterval);
+  countdownInterval = setInterval(() => updateTimer(targetTime), 1000);
+}
+
+function updateTimer(targetTime) {
+  const now = new Date().getTime();
+  const timeRemaining = targetTime - now;
+
+  // If the countdown is finished
+  if (timeRemaining <= 0) {
+    clearInterval(countdownInterval);
+    hoursEl.textContent = "00";
+    minutesEl.textContent = "00";
+    secondsEl.textContent = "00";
+    localStorage.removeItem('countdown_target');
+    return;
+  }
+
+  // Time calculations for total accumulated hours, minutes, and seconds
+  const hours = Math.floor(timeRemaining / (1000 * 60 * 60));
+  const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+  // Display results, padded with leading zeros
+  hoursEl.textContent = String(hours).padStart(2, '0');
+  minutesEl.textContent = String(minutes).padStart(2, '0');
+  secondsEl.textContent = String(seconds).padStart(2, '0');
+}
+
+// Reset button functionality to restart the 78h cycle
+resetBtn.addEventListener('click', () => {
+  localStorage.removeItem('countdown_target');
+  initTimer();
+});
+
+// Initialize the script on page load
+initTimer();
+
 </script>
 </body>
 </html>
