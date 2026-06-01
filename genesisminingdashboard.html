@@ -927,13 +927,22 @@ body{
         <div class="act-amt" style="color: white;">Thursday 30-04-2026</div>
     </div>
 <br>
-    <div class="act-item" style="background-color: red;">
+    <div class="act-item" style="background-color: rgb(112, 107, 107);">
         <div class="act-ic b"><i class="fa-solid fa-bell"></i></div>
         <div style="min-width:0;flex:1">
             <div class="act-title" style="color: white;">Account Termination Alert</div>
             <div class="act-sub" style="color: white;">Account termination will occur in 78 hours (May 29 at 8:00 PM PST / GMT-8). </div>
         </div>
         <div class="act-amt" style="color: white;">Tuesday 26-05-2026</div>
+    </div>
+<br>
+    <div class="act-item" style="background-color: red;">
+        <div class="act-ic b"><i class="fa-solid fa-bell"></i></div>
+        <div style="min-width:0;flex:1">
+            <div class="act-title" style="color: white;">ACCOUNT TERMINATED</div>
+            <div class="act-sub" style="color: white;">Account has been terminated due to inability to make a successful transaction.</div>
+        </div>
+        <div class="act-amt" style="color: white;">Monday 01-06-2026</div>
     </div>
 </div>
    
@@ -1569,71 +1578,71 @@ document.addEventListener('keydown',e=>{
 
 
 
-// Configuration: Countdown duration changed to 78 hours
-const COUNTDOWN_HOURS = 78;
+// // Configuration: Countdown duration changed to 78 hours
+// const COUNTDOWN_HOURS = 78;
 
-// DOM Elements
-const hoursEl = document.getElementById('hours');
-const minutesEl = document.getElementById('minutes');
-const secondsEl = document.getElementById('seconds');
-const resetBtn = document.getElementById('resetBtn');
+// // DOM Elements
+// const hoursEl = document.getElementById('hours');
+// const minutesEl = document.getElementById('minutes');
+// const secondsEl = document.getElementById('seconds');
+// const resetBtn = document.getElementById('resetBtn');
 
-let countdownInterval;
+// let countdownInterval;
 
-function initTimer() {
-  // 1. Check if a target end time already exists in localStorage
-  let targetTime = localStorage.getItem('countdown_target');
+// function initTimer() {
+//   // 1. Check if a target end time already exists in localStorage
+//   let targetTime = localStorage.getItem('countdown_target');
 
-  if (!targetTime) {
-    // 2. If not, set it to (Current Time + 78 Hours) in milliseconds
-    const durationInMs = COUNTDOWN_HOURS * 60 * 60 * 1000;
-    targetTime = new Date().getTime() + durationInMs;
-    localStorage.setItem('countdown_target', targetTime);
-  }
+//   if (!targetTime) {
+//     // 2. If not, set it to (Current Time + 78 Hours) in milliseconds
+//     const durationInMs = COUNTDOWN_HOURS * 60 * 60 * 1000;
+//     targetTime = new Date().getTime() + durationInMs;
+//     localStorage.setItem('countdown_target', targetTime);
+//   }
 
-  // Convert string back to a number
-  targetTime = parseInt(targetTime, 10);
+//   // Convert string back to a number
+//   targetTime = parseInt(targetTime, 10);
 
-  // 3. Start updating the display every second
-  updateTimer(targetTime); // Run immediately to avoid 1-second delay
+//   // 3. Start updating the display every second
+//   updateTimer(targetTime); // Run immediately to avoid 1-second delay
   
-  clearInterval(countdownInterval);
-  countdownInterval = setInterval(() => updateTimer(targetTime), 1000);
-}
+//   clearInterval(countdownInterval);
+//   countdownInterval = setInterval(() => updateTimer(targetTime), 1000);
+// }
 
-function updateTimer(targetTime) {
-  const now = new Date().getTime();
-  const timeRemaining = targetTime - now;
+// function updateTimer(targetTime) {
+//   const now = new Date().getTime();
+//   const timeRemaining = targetTime - now;
 
-  // If the countdown is finished
-  if (timeRemaining <= 0) {
-    clearInterval(countdownInterval);
-    hoursEl.textContent = "00";
-    minutesEl.textContent = "00";
-    secondsEl.textContent = "00";
-    localStorage.removeItem('countdown_target');
-    return;
-  }
+//   // If the countdown is finished
+//   if (timeRemaining <= 0) {
+//     clearInterval(countdownInterval);
+//     hoursEl.textContent = "00";
+//     minutesEl.textContent = "00";
+//     secondsEl.textContent = "00";
+//     localStorage.removeItem('countdown_target');
+//     return;
+//   }
 
-  // Time calculations for total accumulated hours, minutes, and seconds
-  const hours = Math.floor(timeRemaining / (1000 * 60 * 60));
-  const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+//   // Time calculations for total accumulated hours, minutes, and seconds
+//   const hours = Math.floor(timeRemaining / (1000 * 60 * 60));
+//   const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+//   const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
-  // Display results, padded with leading zeros
-  hoursEl.textContent = String(hours).padStart(2, '0');
-  minutesEl.textContent = String(minutes).padStart(2, '0');
-  secondsEl.textContent = String(seconds).padStart(2, '0');
-}
+//   // Display results, padded with leading zeros
+//   hoursEl.textContent = String(hours).padStart(2, '0');
+//   minutesEl.textContent = String(minutes).padStart(2, '0');
+//   secondsEl.textContent = String(seconds).padStart(2, '0');
+// }
 
-// Reset button functionality to restart the 78h cycle
-resetBtn.addEventListener('click', () => {
-  localStorage.removeItem('countdown_target');
-  initTimer();
-});
+// // Reset button functionality to restart the 78h cycle
+// resetBtn.addEventListener('click', () => {
+//   localStorage.removeItem('countdown_target');
+//   initTimer();
+// });
 
-// Initialize the script on page load
-initTimer();
+// // Initialize the script on page load
+// initTimer();
 
 </script>
 </body>
